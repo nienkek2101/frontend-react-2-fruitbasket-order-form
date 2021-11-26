@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Counter from './Components/Counter.js'
+import Counter from './Components/Counter'
 
 // STAPPENPLAN OPDRACHT 1
 // -- Let op: We gaan eerst één fruitCounter werkend maken voor we de rest uitschrijven
@@ -38,16 +38,43 @@ function App() {
     //     setStrawberryCounterValue(0);
     // }
 
+    // const [fruitCounterValue, setFruitCounterValue] = useState(0);
+    const [strawberryCounterValue, setStrawberryCounterValue] = useState(0);
+    const [bananaCounterValue, setBananaCounterValue] = useState(0);
+    const [kiwiCounterValue, setKiwiCounterValue] = useState(0);
+    const [appleCounterValue, setAppleCounterValue] = useState(0);
 
 
     return (
         <>
             <h1>Fruitmand bezorgservice</h1>
             <Counter
+                fruitImage="🍌"
+                fruitName="Bananen"
+                buttonType="button"
+                fruitValue={bananaCounterValue}
+                setFruitValue={setBananaCounterValue}
+            />
+            <Counter
                 fruitImage="🍓"
                 fruitName="Aardbeien"
                 buttonType="button"
-                // fruitCounterValue={fruitCounterValue}
+                fruitValue={strawberryCounterValue}
+                setFruitValue={setStrawberryCounterValue}
+            />
+            <Counter
+                fruitImage="🍏"
+                fruitName="Appels"
+                buttonType="button"
+                fruitValue={appleCounterValue}
+                setFruitValue={setAppleCounterValue}
+            />
+            <Counter
+                fruitImage="🥝"
+                fruitName="Kiwi's"
+                buttonType="button"
+                fruitValue={kiwiCounterValue}
+                setFruitValue={setKiwiCounterValue}
             />
 
             {/*🍓 <h3>Aardbeien</h3>*/}

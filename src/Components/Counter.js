@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Counter({ fruitName, fruitImage, buttonType }) {
-
-    const [fruitCounterValue, setFruitCounterValue] = useState(0);
+function Counter({ fruitName, fruitImage, buttonType, fruitValue, setFruitValue }) {
 
     return (
         <>
@@ -11,24 +9,45 @@ function Counter({ fruitName, fruitImage, buttonType }) {
                 <h3>{fruitName}</h3>
                 <button
                     type={buttonType}
-                    onClick={() => setFruitCounterValue(fruitCounterValue - 1)}
-                    disabled={fruitCounterValue === 0}
+                    onClick={() => setFruitValue(fruitValue - 1)}
+                    disabled={fruitValue === 0}
                 >
                     -
                 </button>
-                <p>{fruitCounterValue}</p>
+                <p>{fruitValue}</p>
                 <button
                     type={buttonType}
-                    onClick={() => setFruitCounterValue(fruitCounterValue + 1)}
+                    onClick={() => setFruitValue(fruitValue + 1)}
                 >
                     +
                 </button>
                 <button
                     type="button"
-                    onClick={setFruitCounterValue(fruitCounterValue === 0)}
+                    onClick={() => setFruitValue(0)}
                 >
                     Reset
                 </button>
+                {/*<button*/}
+                {/*    type={buttonType}*/}
+                {/*    onClick={() => setFruitCounterValue(fruitCounterValue - 1)}*/}
+                {/*    disabled={fruitCounterValue === 0}*/}
+                {/*>*/}
+                {/*    -*/}
+                {/*</button>*/}
+                {/*<p>{fruitCounterValue}</p>*/}
+                {/*<button*/}
+                {/*    type={buttonType}*/}
+                {/*    onClick={() => setFruitCounterValue(fruitCounterValue + 1)}*/}
+                {/*>*/}
+                {/*    +*/}
+                {/*</button>*/}
+                {/*<button*/}
+                {/*    type="button"*/}
+                {/*    onClick={setFruitCounterValue(fruitCounterValue === 0)}*/}
+                {/*>*/}
+                {/*    Reset*/}
+                {/*</button>*/}
+
             </article>
 
         </>

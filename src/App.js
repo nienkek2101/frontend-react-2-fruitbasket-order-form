@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
+import Counter from './Components/Counter.js'
 
 // STAPPENPLAN OPDRACHT 1
 // -- Let op: We gaan eerst één fruitCounter werkend maken voor we de rest uitschrijven
@@ -22,29 +23,41 @@ import './App.css';
 // [ ] Een event-listener op de reset-knop die de reset-functie triggert onClick
 
 function App() {
-    const [strawberryCounterValue, setStrawberryCounterValue] = useState(0);
+    // const [strawberryCounterValue, setStrawberryCounterValue] = useState(0);
+    // const [bananaCounterValue, setBananaCounterValue] = useState(0);
+    // const [kiwiCounterValue, setKiwiCounterValue] = useState(0);
+    // const [appleCounterValue, setAppleCounterValue] = useState(0);
+    //
+    // function handleClickMin() {
+    //     setStrawberryCounterValue(strawberryCounterValue - 1);
+    // }
+    // function handleClickPlus() {
+    //     setStrawberryCounterValue(strawberryCounterValue + 1);
+    // }
+    // function resetStrawberries() {
+    //     setStrawberryCounterValue(0);
+    // }
 
-    function handleClickMin() {
-        setStrawberryCounterValue(strawberryCounterValue - 1);
-    }
-    function handleClickPlus() {
-        setStrawberryCounterValue(strawberryCounterValue + 1);
-    }
-    function resetStrawberries() {
-        setStrawberryCounterValue(0);
-    }
 
-  return (
-    <>
-      <h1>Fruitmand bezorgservice</h1>
-        🍓 <h3>Aardbeien</h3>
-        <button type="button" onClick={handleClickMin} disabled={strawberryCounterValue === 0}>-</button>
-        <p>{strawberryCounterValue}</p>
-        <button type="button" onClick={handleClickPlus}>+</button>
-        <button type="button" onClick={resetStrawberries}>Reset</button>
 
-    </>
-  );
+    return (
+        <>
+            <h1>Fruitmand bezorgservice</h1>
+            <Counter
+                fruitImage="🍓"
+                fruitName="Aardbeien"
+                buttonType="button"
+                // fruitCounterValue={fruitCounterValue}
+            />
+
+            {/*🍓 <h3>Aardbeien</h3>*/}
+            {/*<button type="button" onClick={handleClickMin} disabled={strawberryCounterValue === 0}>-</button>*/}
+            {/*<p>{strawberryCounterValue}</p>*/}
+            {/*<button type="button" onClick={handleClickPlus}>+</button>*/}
+            {/*<button type="button" onClick={resetStrawberries}>Reset</button>*/}
+
+        </>
+    );
 }
 
 export default App;

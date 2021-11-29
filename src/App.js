@@ -22,23 +22,40 @@ import Counter from './Components/Counter'
 // [ ] Schrijf een reset-functie die de state waardes van alle counters (nu nog alleen aardbeien) op 0 zet
 // [ ] Een event-listener op de reset-knop die de reset-functie triggert onClick
 
-function App() {
-    // const [strawberryCounterValue, setStrawberryCounterValue] = useState(0);
-    // const [bananaCounterValue, setBananaCounterValue] = useState(0);
-    // const [kiwiCounterValue, setKiwiCounterValue] = useState(0);
-    // const [appleCounterValue, setAppleCounterValue] = useState(0);
-    //
-    // function handleClickMin() {
-    //     setStrawberryCounterValue(strawberryCounterValue - 1);
-    // }
-    // function handleClickPlus() {
-    //     setStrawberryCounterValue(strawberryCounterValue + 1);
-    // }
-    // function resetStrawberries() {
-    //     setStrawberryCounterValue(0);
-    // }
+/* Alleen aardbei - zonder component */
+// function App() {
+//     const [strawberryCounterValue, setStrawberryCounterValue] = useState(0);
+//     // const [bananaCounterValue, setBananaCounterValue] = useState(0);
+//     // const [kiwiCounterValue, setKiwiCounterValue] = useState(0);
+//     // const [appleCounterValue, setAppleCounterValue] = useState(0);
+//     //
+//     function handleClickMin() {
+//         setStrawberryCounterValue(strawberryCounterValue - 1);
+//     }
+//     function handleClickPlus() {
+//         setStrawberryCounterValue(strawberryCounterValue + 1);
+//     }
+//     function resetStrawberries() {
+//         setStrawberryCounterValue(0);
+//     }
+//
+//
+//     return (
+//         <>
+//             <h1>Fruitmand bezorgservice</h1>
+//             🍓 <h3>Aardbeien</h3>
+//             <button type="button" onClick={handleClickMin} disabled={strawberryCounterValue === 0}>-</button>
+//             <p>{strawberryCounterValue}</p>
+//             <button type="button" onClick={handleClickPlus}>+</button>
+//             <button type="button" onClick={resetStrawberries}>Reset</button>
+//
+//         </>
+//     );
+// }
+//
+// export default App;
 
-    // const [fruitCounterValue, setFruitCounterValue] = useState(0);
+function App() {
     const [strawberryCounterValue, setStrawberryCounterValue] = useState(0);
     const [bananaCounterValue, setBananaCounterValue] = useState(0);
     const [kiwiCounterValue, setKiwiCounterValue] = useState(0);
@@ -76,13 +93,6 @@ function App() {
                 fruitValue={kiwiCounterValue}
                 setFruitValue={setKiwiCounterValue}
             />
-
-            {/*🍓 <h3>Aardbeien</h3>*/}
-            {/*<button type="button" onClick={handleClickMin} disabled={strawberryCounterValue === 0}>-</button>*/}
-            {/*<p>{strawberryCounterValue}</p>*/}
-            {/*<button type="button" onClick={handleClickPlus}>+</button>*/}
-            {/*<button type="button" onClick={resetStrawberries}>Reset</button>*/}
-
         </>
     );
 }

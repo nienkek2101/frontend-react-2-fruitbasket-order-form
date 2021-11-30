@@ -73,14 +73,21 @@ function App() {
     const [ formLastName, setFormLastName ] = useState('');
     const [ formAge, setFormAge ] = useState('');
     const [ formZipcode, setFormZipcode ] = useState('');
-    // const [ formDelivery, setFormDelivery ] = useState('');
+    const [ formDelivery, setFormDelivery ] = useState('');
     // const [ formDeliveryTime, setFormDeliveryTime ] = useState('');
     const [ formComments, setFormComments ] = useState('');
     const [ formTermsAndConditions, setFormTermsAndConditions ] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(bananaCounterValue, strawberryCounterValue, appleCounterValue, kiwiCounterValue, formFirstName, formLastName, formAge, formZipcode, formComments, formTermsAndConditions);
+        console.log(bananaCounterValue, strawberryCounterValue,
+            appleCounterValue, kiwiCounterValue, formFirstName,
+            formLastName, formAge, formZipcode, formDelivery,
+            formComments, formTermsAndConditions);
+
+        // if (strawberryCounterValue > 0) {
+        //
+        // }
         // resetFruitValue();
         // setFormFirstName('');
 
@@ -125,7 +132,7 @@ function App() {
             </button>
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor="first-name"> Voornaam
+                <label htmlFor="first-name" className="form-in-line"> Voornaam
                 <input
                     type="text"
                     id="first-name"
@@ -134,7 +141,7 @@ function App() {
                     onChange={(e) => setFormFirstName(e.target.value)}
                 />
                 </label>
-                <label htmlFor="last-name"> Achternaam
+                <label htmlFor="last-name" className="form-in-line"> Achternaam
                 <input
                     type="text"
                     id="last-name"
@@ -143,7 +150,7 @@ function App() {
                     onChange={(e) => setFormLastName(e.target.value)}
                 />
                 </label>
-                <label htmlFor="age"> Leeftijd
+                <label htmlFor="age" className="form-in-line"> Leeftijd
                 <input
                     type="number"
                     id="age"
@@ -152,7 +159,7 @@ function App() {
                     onChange={(e) => setFormAge(e.target.value)}
                 />
                 </label>
-                <label htmlFor="zip-code"> Postcode
+                <label htmlFor="zip-code" className="form-in-line"> Postcode
                 <input
                     type="text"
                     id="zip-code"
@@ -161,11 +168,14 @@ function App() {
                     onChange={(e) => setFormZipcode(e.target.value)}
                 />
                 </label>
-                <label htmlFor="bezorg-frequentie"> Bezorgfrequentie
-                <select name="bezorg-frequentie" id="bezorg-frequentie">
-                    <option value="wekelijks">Wekelijks</option>
-                    <option value="2 wekelijks">1 keer per 2 weken</option>
-                    <option value="1 keer per maand">1 keer per 4 weken</option>
+                <label htmlFor="bezorg-frequentie" className="form-in-line"> Bezorgfrequentie
+                <select
+                    name="bezorg-frequentie"
+                    id="bezorg-frequentie"
+                    onChange={(e) => setFormDelivery(e.target.value)}>
+                    <option value={formDelivery}>Wekelijks</option>
+                    <option value={formDelivery}>1 keer per 2 weken</option>
+                    <option value={formDelivery}>1 keer per 4 weken</option>
                 </select>
                 </label>
                 <label htmlFor="savonds">'s Avonds
@@ -173,7 +183,7 @@ function App() {
                     type="radio"
                     id="savonds"
                     name="tijdstip"
-                    // value={formDeliveryTime}
+                    // checked={formDeliveryTime}
                     // onChange={(e) => setFormDeliveryTime(e.target.value)}
                 />
                 </label>
@@ -182,11 +192,11 @@ function App() {
                     type="radio"
                     id="overdag"
                     name="tijdstip"
-                    // value={formDeliveryTime}
-                    // onChange={(e) => setFormDeliveryTime(e.target.value)}
+                    // checked={formDeliveryTime}
+                    // onChange={(e) => setFormDeliveryTime(!setFormDeliveryTime)}
                 />
                 </label>
-                <label htmlFor="opmerking"> Opmerking
+                <label htmlFor="opmerking" className="form-in-line"> Opmerking
                 <textarea
                     id="opmerking"
                     name="opmerking"
@@ -197,7 +207,7 @@ function App() {
                     onChange={(e) => setFormComments(e.target.value)}
                 />
                 </label>
-                <label htmlFor="voorwaarden">
+                <label htmlFor="voorwaarden" className="form-in-line">
                 <input
                     type="checkbox"
                     id="voorwaarden"

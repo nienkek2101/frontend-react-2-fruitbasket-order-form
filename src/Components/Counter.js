@@ -37,12 +37,20 @@ import './Counter.css';
 //
 // export default Counter;
 
-function Counter({ fruitName, fruitImage, buttonType, fruitValue, setFruitValue }) {
+function Counter({ fruitName, fruitImage, buttonType, fruitValue, setFruitValue, fruitStyling }) {
+    // function getStyling() {
+    //     if (fruitValue > 0) {
+    //         fruitStyling = "in-bestelling"
+    //     }
+    //     if (fruitValue === 0) {
+    //         fruitStyling = "geen-bestelling"
+    //     }
+    // }
 
     return (
         <>
             <article className={fruitName}>
-                {fruitImage}
+                <span class="fruit-image">{fruitImage}</span>
                 <h3>{fruitName}</h3>
                     <button
                         type={buttonType}

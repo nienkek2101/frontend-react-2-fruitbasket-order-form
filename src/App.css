@@ -1,0 +1,20 @@
+input[type="radio"] {
+    display: inline-block;
+    margin: 10px 15px 10px 5px;
+}
+
+.form-in-line {
+    display: block;
+    margin: 10px 5px 10px 0;
+}
+
+input, select {
+    margin-left: 10px;
+}
+
+textarea {
+    display: block;
+    margin-top: 10px;
+}
+
+

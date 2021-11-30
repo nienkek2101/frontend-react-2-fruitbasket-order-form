@@ -1,4 +1,5 @@
 import React from 'react';
+import './Counter.css';
 
 /* Poging 1 component maken*/
 // function Counter({ fruitName, fruitImage, buttonType, fruitValue, setFruitValue }) {
@@ -40,29 +41,23 @@ function Counter({ fruitName, fruitImage, buttonType, fruitValue, setFruitValue 
 
     return (
         <>
-            <article>
+            <article className={fruitName}>
                 {fruitImage}
                 <h3>{fruitName}</h3>
-                <button
-                    type={buttonType}
-                    onClick={() => setFruitValue(fruitValue - 1)}
-                    disabled={fruitValue === 0}
-                >
-                    -
-                </button>
-                <p>{fruitValue}</p>
-                <button
-                    type={buttonType}
-                    onClick={() => setFruitValue(fruitValue + 1)}
-                >
-                    +
-                </button>
-                <button
-                    type="button"
-                    onClick={() => setFruitValue(0)}
-                >
-                    Reset
-                </button>
+                    <button
+                        type={buttonType}
+                        onClick={() => setFruitValue(fruitValue - 1)}
+                        disabled={fruitValue === 0}
+                    >
+                        -
+                    </button>
+                    <p>{fruitValue}</p>
+                    <button
+                        type={buttonType}
+                        onClick={() => setFruitValue(fruitValue + 1)}
+                    >
+                        +
+                    </button>
             </article>
 
         </>

@@ -76,7 +76,7 @@ function App() {
     const [ formDelivery, setFormDelivery ] = useState('');
     // const [ formDeliveryTime, setFormDeliveryTime ] = useState('');
     const [ formComments, setFormComments ] = useState('');
-    const [ formTermsAndConditions, setFormTermsAndConditions ] = useState(false);
+    const [ formTermsAndConditions, toggleFormTermsAndConditions ] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -213,7 +213,7 @@ function App() {
                     id="voorwaarden"
                     name="voorwaarden"
                     checked={formTermsAndConditions}
-                    onChange={() => setFormTermsAndConditions(!formTermsAndConditions)}
+                    onChange={() => toggleFormTermsAndConditions(!formTermsAndConditions)}
                 /> Ik ga akkoord met de algemene voorwaarden
                 </label>
                 <button type="submit">
@@ -225,3 +225,94 @@ function App() {
 }
 
 export default App;
+
+
+// <form onSubmit={handleSubmit}>
+//     <label htmlFor="first-name" className="form-in-line"> Voornaam
+//         <input
+//             type="text"
+//             id="first-name"
+//             name="first-name"
+//             value={formFirstName}
+//             onChange={(e) => setFormFirstName(e.target.value)}
+//         />
+//     </label>
+//     <label htmlFor="last-name" className="form-in-line"> Achternaam
+//         <input
+//             type="text"
+//             id="last-name"
+//             name="last-name"
+//             value={formLastName}
+//             onChange={(e) => setFormLastName(e.target.value)}
+//         />
+//     </label>
+//     <label htmlFor="age" className="form-in-line"> Leeftijd
+//         <input
+//             type="number"
+//             id="age"
+//             name="age"
+//             value={formAge}
+//             onChange={(e) => setFormAge(e.target.value)}
+//         />
+//     </label>
+//     <label htmlFor="zip-code" className="form-in-line"> Postcode
+//         <input
+//             type="text"
+//             id="zip-code"
+//             name="zip-code"
+//             value={formZipcode}
+//             onChange={(e) => setFormZipcode(e.target.value)}
+//         />
+//     </label>
+//     <label htmlFor="bezorg-frequentie" className="form-in-line"> Bezorgfrequentie
+//         <select
+//             name="bezorg-frequentie"
+//             id="bezorg-frequentie"
+//             onChange={(e) => setFormDelivery(e.target.value)}>
+//             <option value={formDelivery}>Wekelijks</option>
+//             <option value={formDelivery}>1 keer per 2 weken</option>
+//             <option value={formDelivery}>1 keer per 4 weken</option>
+//         </select>
+//     </label>
+//     <label htmlFor="savonds">'s Avonds
+//         <input
+//             type="radio"
+//             id="savonds"
+//             name="tijdstip"
+//             // checked={formDeliveryTime}
+//             // onChange={(e) => setFormDeliveryTime(e.target.value)}
+//         />
+//     </label>
+//     <label htmlFor="overdag">Overdag
+//         <input
+//             type="radio"
+//             id="overdag"
+//             name="tijdstip"
+//             // checked={formDeliveryTime}
+//             // onChange={(e) => setFormDeliveryTime(!setFormDeliveryTime)}
+//         />
+//     </label>
+//     <label htmlFor="opmerking" className="form-in-line"> Opmerking
+//         <textarea
+//             id="opmerking"
+//             name="opmerking"
+//             placeholder="type hier uw opmerking"
+//             rows="12"
+//             cols="50"
+//             value={formComments}
+//             onChange={(e) => setFormComments(e.target.value)}
+//         />
+//     </label>
+//     <label htmlFor="voorwaarden" className="form-in-line">
+//         <input
+//             type="checkbox"
+//             id="voorwaarden"
+//             name="voorwaarden"
+//             checked={formTermsAndConditions}
+//             onChange={() => toggleFormTermsAndConditions(!formTermsAndConditions)}
+//         /> Ik ga akkoord met de algemene voorwaarden
+//     </label>
+//     <button type="submit">
+//         Versturen
+//     </button>
+// </form>

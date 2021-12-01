@@ -74,7 +74,7 @@ function App() {
     const [ formAge, setFormAge ] = useState('');
     const [ formZipcode, setFormZipcode ] = useState('');
     const [ formDelivery, setFormDelivery ] = useState('');
-    // const [ formDeliveryTime, setFormDeliveryTime ] = useState('');
+    const [ formDeliveryTime, setFormDeliveryTime ] = useState('');
     const [ formComments, setFormComments ] = useState('');
     const [ formTermsAndConditions, toggleFormTermsAndConditions ] = useState(false);
 
@@ -82,9 +82,10 @@ function App() {
         e.preventDefault();
         console.log(bananaCounterValue, strawberryCounterValue,
             appleCounterValue, kiwiCounterValue, formFirstName,
-            formLastName, formAge, formZipcode, formDelivery,
+            formLastName, formAge, formZipcode, formDelivery, formDeliveryTime,
             formComments, formTermsAndConditions);
 
+        // Hier wilde ik een if statement maken voor de classname van de fruit counter
         // if (strawberryCounterValue > 0) {
         //
         // }
@@ -172,10 +173,11 @@ function App() {
                 <select
                     name="bezorg-frequentie"
                     id="bezorg-frequentie"
+                    value={formDelivery}
                     onChange={(e) => setFormDelivery(e.target.value)}>
-                    <option value={formDelivery}>Wekelijks</option>
-                    <option value={formDelivery}>1 keer per 2 weken</option>
-                    <option value={formDelivery}>1 keer per 4 weken</option>
+                    <option value="Wekelijks">Wekelijks</option>
+                    <option value="Tweewekelijks">1 keer per 2 weken</option>
+                    <option value="Maandelijks">1 keer per 4 weken</option>
                 </select>
                 </label>
                 <label htmlFor="savonds">'s Avonds
@@ -183,8 +185,9 @@ function App() {
                     type="radio"
                     id="savonds"
                     name="tijdstip"
-                    // checked={formDeliveryTime}
-                    // onChange={(e) => setFormDeliveryTime(e.target.value)}
+                    value="'s Avonds"
+                    checked={formDeliveryTime === "'s Avonds"}
+                    onChange={(e) => setFormDeliveryTime(e.target.value)}
                 />
                 </label>
                 <label htmlFor="overdag">Overdag
@@ -192,8 +195,9 @@ function App() {
                     type="radio"
                     id="overdag"
                     name="tijdstip"
-                    // checked={formDeliveryTime}
-                    // onChange={(e) => setFormDeliveryTime(!setFormDeliveryTime)}
+                    value="Overdag"
+                    checked={formDeliveryTime === "Overdag"}
+                    onChange={(e) => setFormDeliveryTime(e.target.value)}
                 />
                 </label>
                 <label htmlFor="opmerking" className="form-in-line"> Opmerking
@@ -226,7 +230,7 @@ function App() {
 
 export default App;
 
-
+/* POGING 1*/
 // <form onSubmit={handleSubmit}>
 //     <label htmlFor="first-name" className="form-in-line"> Voornaam
 //         <input

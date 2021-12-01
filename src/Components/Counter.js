@@ -38,14 +38,16 @@ import './Counter.css';
 // export default Counter;
 
 function Counter({ fruitName, fruitImage, buttonType, fruitValue, setFruitValue, fruitStyling }) {
-    // function getStyling() {
-    //     if (fruitValue > 0) {
-    //         fruitStyling = "in-bestelling"
-    //     }
-    //     if (fruitValue === 0) {
-    //         fruitStyling = "geen-bestelling"
-    //     }
-    // }
+    // Hier wilde ik een function aanmaken voor het aanpassen van de styling van de counter,
+    // maar het werkt niet. Waar roep ik deze nou aan?
+    function getStyling() {
+        if (fruitValue > 0) {
+            fruitStyling = "in-bestelling"
+        }
+        if (fruitValue === 0) {
+            fruitStyling = "geen-bestelling"
+        }
+    }
 
     return (
         <>
